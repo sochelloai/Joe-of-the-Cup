@@ -27,7 +27,7 @@ export default function Header({ cartCount, onCartClick }: HeaderProps) {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-[1250px] items-center justify-between px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto flex max-w-[1350px] items-center justify-between px-6 sm:px-10 lg:px-16">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <img

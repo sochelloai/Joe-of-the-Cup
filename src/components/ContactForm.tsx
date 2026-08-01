@@ -18,7 +18,7 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="py-24 bg-warm-paper/50 border-b-4 border-coffee-black relative">
-      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1350px] px-6 sm:px-10 lg:px-16">
         
         {/* Card Container */}
         <div className="max-w-2xl mx-auto bg-light-cream/30 rounded-2xl border-4 border-coffee-black p-8 sm:p-12 retro-shadow-lg">

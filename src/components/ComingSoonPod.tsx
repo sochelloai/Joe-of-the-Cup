@@ -19,7 +19,7 @@ export default function ComingSoonPod() {
       {/* Decorative sunburst behind the pod image */}
       <div className="absolute right-1/4 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-retro-yellow/10 blur-3xl pointer-events-none" />
 
-      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="mx-auto max-w-[1350px] px-6 sm:px-10 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left / Graphic: Packaging Render for Keurig Pod */}

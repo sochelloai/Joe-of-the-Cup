@@ -6,7 +6,7 @@ export default function Footer() {
       {/* Visual Accent Top Bar */}
       <div className="absolute top-0 inset-x-0 h-2 bg-retro-red" />
       
-      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1350px] px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           {/* Logo & Slogan Column */}

@@ -6,7 +6,7 @@ export default function BrandStory() {
       {/* Background Dots Pattern */}
       <div className="absolute inset-0 retro-menu-dots opacity-20 pointer-events-none" />
 
-      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16 relative z-10">
+      <div className="mx-auto max-w-[1350px] px-6 sm:px-10 lg:px-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           
           {/* Left Column: Polaroid-style Character Photo Card */}
