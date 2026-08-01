@@ -149,7 +149,7 @@ export default function Home() {
               {/* Polaroid 1: Farmer */}
               <div className="flex justify-center">
                 <div className="bg-light-cream p-4 rounded border-3 border-coffee-black shadow-md rotate-[-2deg] hover:rotate-0 transition-transform duration-300 w-72">
-                  <div className="aspect-[4/5] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
+                  <div className="aspect-[2/3] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
                     <img
                       src="/characters/05-farmer-man.png"
                       alt="Marcus Vance - Farmer"
@@ -170,7 +170,7 @@ export default function Home() {
               {/* Polaroid 2: Electrician */}
               <div className="flex justify-center">
                 <div className="bg-light-cream p-4 rounded border-3 border-coffee-black shadow-md rotate-[3deg] hover:rotate-0 transition-transform duration-300 w-72">
-                  <div className="aspect-[4/5] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
+                  <div className="aspect-[2/3] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
                     <img
                       src="/characters/06-electrician-woman.png"
                       alt="Sarah Jenkins - Electrician"
@@ -191,7 +191,7 @@ export default function Home() {
               {/* Polaroid 3: Delivery Driver */}
               <div className="flex justify-center">
                 <div className="bg-light-cream p-4 rounded border-3 border-coffee-black shadow-md rotate-[-1deg] hover:rotate-0 transition-transform duration-300 w-72">
-                  <div className="aspect-[4/5] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
+                  <div className="aspect-[2/3] bg-coffee-black/10 border-2 border-coffee-black rounded overflow-hidden">
                     <img
                       src="/characters/07-delivery-driver-man.png"
                       alt="Frank Russo - Delivery Driver"

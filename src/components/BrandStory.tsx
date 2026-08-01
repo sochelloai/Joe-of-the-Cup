@@ -12,7 +12,7 @@ export default function BrandStory() {
           {/* Left Column: Polaroid-style Character Photo Card */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="bg-light-cream/90 p-5 rounded-lg border-4 border-coffee-black retro-shadow-lg rotate-[-2deg] hover:rotate-[0deg] transition-transform duration-300 max-w-sm w-full">
-              <div className="aspect-[4/5] bg-coffee-black/10 rounded border-2 border-coffee-black overflow-hidden relative">
+              <div className="aspect-[2/3] bg-coffee-black/10 rounded border-2 border-coffee-black overflow-hidden relative">
                 <img
                   src="/characters/01-construction-carpenter-woman.png"
                   alt="Daniela Miller - Carpenter"

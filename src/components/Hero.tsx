@@ -79,7 +79,7 @@ export default function Hero() {
               
               {/* Polaroid 1: Auto Mechanic Woman (Back Left) */}
               <div className="absolute left-4 top-10 bg-light-cream p-3 rounded border-3 border-coffee-black shadow-md rotate-[-6deg] w-48 sm:w-56 hover:rotate-[0deg] hover:z-30 transition-all duration-300 z-10">
-                <div className="aspect-[4/5] bg-coffee-black/15 border-2 border-coffee-black rounded overflow-hidden">
+                <div className="aspect-[2/3] bg-coffee-black/15 border-2 border-coffee-black rounded overflow-hidden">
                   <img
                     src="/characters/03-auto-mechanic-woman.png"
                     alt="Auto Mechanic Woman"
@@ -93,7 +93,7 @@ export default function Hero() {
 
               {/* Polaroid 2: Registered Nurse Man (Front Right) */}
               <div className="absolute right-4 bottom-10 bg-light-cream p-3 rounded border-3 border-coffee-black shadow-lg rotate-[8deg] w-48 sm:w-56 hover:rotate-[0deg] hover:z-30 transition-all duration-300 z-20">
-                <div className="aspect-[4/5] bg-coffee-black/15 border-2 border-coffee-black rounded overflow-hidden">
+                <div className="aspect-[2/3] bg-coffee-black/15 border-2 border-coffee-black rounded overflow-hidden">
                   <img
                     src="/characters/02-registered-nurse-man.png"
                     alt="Registered Nurse Man"
