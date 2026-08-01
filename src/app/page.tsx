@@ -1,65 +1,127 @@
-import Image from "next/image";
+"use client";
+
+import { useState } from "react";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import ProductGrid from "@/components/ProductGrid";
+import BrandStory from "@/components/BrandStory";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
+import CartDrawer, { CartItem } from "@/components/CartDrawer";
 
 export default function Home() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
+
+  // Add item to cart and automatically slide open the cart drawer for instant feedback
+  const handleAddToCart = (newItem: Omit<CartItem, "quantity">) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === newItem.id);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === newItem.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+      return [...prevItems, { ...newItem, quantity: 1 }];
+    });
+    setIsCartOpen(true);
+  };
+
+  const handleUpdateQuantity = (id: string, newQuantity: number) => {
+    if (newQuantity <= 0) {
+      handleRemoveItem(id);
+      return;
+    }
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
+
+  const handleRemoveItem = (id: string) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
+  const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className="flex flex-col min-h-screen bg-warm-paper">
+      {/* Announcement Shipping Banner */}
+      <div className="bg-retro-red text-light-cream text-center py-2 px-4 text-xs font-black uppercase tracking-widest border-b-2 border-coffee-black relative z-50">
+        📢 FREE SHIPPING ON ORDERS OF 2 OR MORE BAGS • ARIZONA FRESH ROASTED DAILY
+      </div>
+
+      {/* Primary Layout */}
+      <Header
+        cartCount={totalCartCount}
+        onCartClick={() => setIsCartOpen(true)}
+      />
+
+      <main className="flex-grow">
+        <Hero />
+
+        {/* Brand Reassurance Grid (Diner Badge Panel) */}
+        <section className="bg-coffee-black text-light-cream py-6 border-b-4 border-coffee-black">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+              <div className="flex flex-col items-center">
+                <span className="text-xl mb-1">🏜️</span>
+                <span className="text-xs font-black uppercase tracking-widest text-retro-yellow">
+                  Arizona Roasted
+                </span>
+                <span className="text-[10px] text-light-cream/70 uppercase font-bold tracking-wider mt-0.5">
+                  Est. 2026 Phoenix
+                </span>
+              </div>
+              <div className="flex flex-col items-center border-l-2 border-dashed border-muted-cream/20 md:border-l-2">
+                <span className="text-xl mb-1">☕</span>
+                <span className="text-xs font-black uppercase tracking-widest text-retro-yellow">
+                  100% Arabica
+                </span>
+                <span className="text-[10px] text-light-cream/70 uppercase font-bold tracking-wider mt-0.5">
+                  Hand-selected beans
+                </span>
+              </div>
+              <div className="flex flex-col items-center border-l-2 border-dashed border-muted-cream/20 md:border-l-2">
+                <span className="text-xl mb-1">📦</span>
+                <span className="text-xs font-black uppercase tracking-widest text-retro-yellow">
+                  Fresh Delivery
+                </span>
+                <span className="text-[10px] text-light-cream/70 uppercase font-bold tracking-wider mt-0.5">
+                  Fitted in clean bags
+                </span>
+              </div>
+              <div className="flex flex-col items-center border-l-2 border-dashed border-muted-cream/20">
+                <span className="text-xl mb-1">⚒️</span>
+                <span className="text-xs font-black uppercase tracking-widest text-retro-yellow">
+                  No Speeches
+                </span>
+                <span className="text-[10px] text-light-cream/70 uppercase font-bold tracking-wider mt-0.5">
+                  Just great coffee
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <ProductGrid onAddToCart={handleAddToCart} />
+        <BrandStory />
+        <ContactForm />
       </main>
+
+      <Footer />
+
+      {/* Stateful E-Commerce Cart slideover */}
+      <CartDrawer
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={cartItems}
+        onUpdateQuantity={handleUpdateQuantity}
+        onRemoveItem={handleRemoveItem}
+      />
     </div>
   );
 }

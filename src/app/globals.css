@@ -1,26 +1,61 @@
 @import "tailwindcss";
 
+@theme {
+  --color-retro-red: #af1f14;
+  --color-retro-yellow: #ee9b01;
+  --color-light-cream: #e7d7a3;
+  --color-coffee-black: #211713;
+  --color-roasted-brown: #4b2d22;
+  --color-warm-paper: #f5ecd2;
+  --color-muted-cream: #cdbf91;
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #f5ecd2;
+  --foreground: #211713;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-warm-paper);
+  color: var(--color-coffee-black);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom retro design styles */
+.retro-border {
+  border: 3px solid var(--color-coffee-black);
+}
+
+.retro-shadow-sm {
+  box-shadow: 2px 2px 0px 0px var(--color-coffee-black);
+}
+
+.retro-shadow {
+  box-shadow: 4px 4px 0px 0px var(--color-coffee-black);
+}
+
+.retro-shadow-lg {
+  box-shadow: 8px 8px 0px 0px var(--color-coffee-black);
+}
+
+.retro-shadow-yellow {
+  box-shadow: 4px 4px 0px 0px var(--color-retro-yellow);
+}
+
+.diner-menu-dots {
+  background-image: radial-gradient(var(--color-muted-cream) 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+}
+
+/* Custom selection styling */
+::selection {
+  background-color: var(--color-retro-yellow);
+  color: var(--color-coffee-black);
 }
