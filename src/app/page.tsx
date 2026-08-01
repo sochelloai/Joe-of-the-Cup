@@ -81,7 +81,7 @@ export default function Home() {
 
         {/* Brand Reassurance Grid (Badge Panel) */}
         <section className="bg-coffee-black text-light-cream py-8 border-b-4 border-coffee-black">
-          <div className="mx-auto max-w-8xl px-6 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="flex flex-col items-center">
                 <span className="text-2xl mb-1">🪵</span>
@@ -131,7 +131,7 @@ export default function Home() {
 
         {/* Meet the Joes Section (Sporadic Character Image Grid) */}
         <section className="py-24 bg-light-cream/20 border-b-4 border-coffee-black">
-          <div className="mx-auto max-w-8xl px-6 sm:px-10 lg:px-16">
+          <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16">
             <div className="text-center max-w-4xl mx-auto mb-16">
               <span className="text-sm font-black uppercase tracking-widest text-retro-red mb-3 block">
                 The People Who Show Up

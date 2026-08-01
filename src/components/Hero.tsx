@@ -19,7 +19,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-8xl px-6 sm:px-10 lg:px-16 relative z-20">
+      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16 relative z-20">
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:items-center">
           
           {/* Text Content */}

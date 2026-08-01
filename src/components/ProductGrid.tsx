@@ -69,7 +69,7 @@ export default function ProductGrid({ onAddToCart }: ProductGridProps) {
 
   return (
     <section id="products" className="py-24 bg-warm-paper border-b-4 border-coffee-black">
-      <div className="mx-auto max-w-8xl px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto max-w-[1250px] px-6 sm:px-10 lg:px-16">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <h2 className="font-display text-5xl font-black uppercase tracking-tight text-coffee-black sm:text-6xl">
