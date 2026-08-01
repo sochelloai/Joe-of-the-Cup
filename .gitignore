@@ -44,3 +44,9 @@ next-env.d.ts
 /.open-next/
 .wrangler/
 
+# Raw High-Res Assets
+/Character Images/
+/Logo/
+/Packaging renders/
+/Page load video/
+

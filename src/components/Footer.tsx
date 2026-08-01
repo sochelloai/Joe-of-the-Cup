@@ -6,31 +6,29 @@ export default function Footer() {
       {/* Visual Accent Top Bar */}
       <div className="absolute top-0 inset-x-0 h-2 bg-retro-red" />
       
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-8xl px-6 sm:px-10 lg:px-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           {/* Logo & Slogan Column */}
           <div className="flex flex-col gap-4">
-            <a href="#" className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-retro-red text-light-cream font-display font-bold text-xl border-2 border-coffee-black">
-                J
-              </div>
+            <a href="#" className="flex items-center gap-3">
+              <img src="/brand/logo.png" alt="Joe of the Cup logo" className="h-10 object-contain" />
               <span className="font-display text-xl font-black uppercase text-white tracking-tight">
                 Joe of the Cup
               </span>
             </a>
-            <p className="text-xs text-light-cream/70 leading-relaxed uppercase font-bold tracking-wider">
+            <p className="text-sm text-light-cream/70 leading-relaxed uppercase font-bold tracking-wider">
               Premium coffee for the everyday American worker. Roasted with bold character and zero preachy lectures.
             </p>
           </div>
 
           {/* Contact Details Column */}
           <div>
-            <h4 className="font-display text-sm font-black uppercase text-retro-yellow tracking-wider mb-4">
-              Diner Office
+            <h4 className="font-display text-base font-black uppercase text-retro-yellow tracking-wider mb-4">
+              St. Charles Office
             </h4>
             <ul className="space-y-2 text-xs font-semibold text-light-cream/80 uppercase tracking-widest">
-              <li>📍 Phoenix, Arizona</li>
+              <li>📍 St. Charles, Missouri</li>
               <li>✉️ hello@joeofthecup.com</li>
               <li>⏰ Mon - Fri • 5:00 AM - 5:00 PM</li>
             </ul>
@@ -38,7 +36,7 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="font-display text-sm font-black uppercase text-retro-yellow tracking-wider mb-4">
+            <h4 className="font-display text-base font-black uppercase text-retro-yellow tracking-wider mb-4">
               Toolbox Links
             </h4>
             <ul className="space-y-2 text-xs font-bold uppercase tracking-wider">
@@ -62,8 +60,8 @@ export default function Footer() {
 
           {/* Legal / Policy Links Column */}
           <div>
-            <h4 className="font-display text-sm font-black uppercase text-retro-yellow tracking-wider mb-4">
-              Diner Policies
+            <h4 className="font-display text-base font-black uppercase text-retro-yellow tracking-wider mb-4">
+              Store Policies
             </h4>
             <ul className="space-y-2 text-xs font-bold uppercase tracking-wider">
               <li>

@@ -27,34 +27,36 @@ export default function Header({ cartCount, onCartClick }: HeaderProps) {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex max-w-8xl items-center justify-between px-6 sm:px-10 lg:px-16">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-retro-red text-light-cream font-display font-bold text-xl retro-border retro-shadow-sm group-hover:bg-retro-yellow group-hover:text-coffee-black transition-colors duration-200">
-            J
-          </div>
-          <span className="font-display text-xl font-bold tracking-tight text-coffee-black">
+        <a href="#" className="flex items-center gap-3 group">
+          <img
+            src="/brand/logo.png"
+            alt="Joe of the Cup logo"
+            className="h-12 object-contain group-hover:scale-105 transition-transform duration-200"
+          />
+          <span className="font-display text-2xl font-bold tracking-tight text-coffee-black">
             Joe of <span className="text-retro-red">the Cup</span>
           </span>
         </a>
 
         {/* Navigation Links */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           <a
             href="#story"
-            className="text-sm font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
+            className="text-base font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
           >
             Our Story
           </a>
           <a
             href="#products"
-            className="text-sm font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
+            className="text-base font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
           >
             Shop Coffee
           </a>
           <a
             href="#contact"
-            className="text-sm font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
+            className="text-base font-bold uppercase tracking-wider text-coffee-black hover:text-retro-red transition-colors duration-200"
           >
             Contact
           </a>
@@ -64,10 +66,10 @@ export default function Header({ cartCount, onCartClick }: HeaderProps) {
         <div className="flex items-center gap-4">
           <button
             onClick={onCartClick}
-            className="relative flex h-10 items-center justify-center rounded-lg bg-light-cream px-4 font-bold text-coffee-black hover:bg-retro-yellow transition-colors duration-200 retro-border retro-shadow-sm cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)]"
+            className="relative flex h-12 items-center justify-center rounded-lg bg-light-cream px-5 font-bold text-coffee-black hover:bg-retro-yellow transition-colors duration-200 retro-border retro-shadow-sm cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)]"
             aria-label="Open Cart"
           >
-            <span className="text-sm uppercase tracking-wide mr-2">Cart</span>
+            <span className="text-base uppercase tracking-wide mr-2">Cart</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

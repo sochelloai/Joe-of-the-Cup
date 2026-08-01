@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export interface CartItem {
   id: string;
@@ -27,6 +27,32 @@ export default function CartDrawer({
   onUpdateQuantity,
   onRemoveItem,
 }: CartDrawerProps) {
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+
+  const handleCheckout = async () => {
+    setIsCheckingOut(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ items: cartItems }),
+      });
+      
+      const data = await response.json();
+      if (data.url) {
+        window.location.href = data.url;
+      } else {
+        alert(data.error || "Failed to initiate Stripe checkout.");
+        setIsCheckingOut(false);
+      }
+    } catch (err) {
+      console.error("Checkout error:", err);
+      alert("An error occurred during checkout. Please try again.");
+      setIsCheckingOut(false);
+    }
+  };
   // Prevent body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
@@ -226,14 +252,11 @@ export default function CartDrawer({
                 </p>
                 <div className="mt-6">
                   <button
-                    onClick={() =>
-                      alert(
-                        "Commerce platform selection required: OpenNext requires a connected payment provider (e.g. Stripe) to initiate checkouts."
-                      )
-                    }
-                    className="w-full flex items-center justify-center rounded-lg bg-retro-red px-6 py-3.5 text-base font-bold uppercase tracking-wider text-light-cream shadow-md hover:bg-retro-yellow hover:text-coffee-black retro-border retro-shadow transition-all duration-200 cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)]"
+                    onClick={handleCheckout}
+                    disabled={isCheckingOut}
+                    className="w-full flex items-center justify-center rounded-lg bg-retro-red px-6 py-3.5 text-base font-bold uppercase tracking-wider text-light-cream shadow-md hover:bg-retro-yellow hover:text-coffee-black retro-border retro-shadow transition-all duration-200 cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)] disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Checkout — ${subtotal.toFixed(2)}
+                    {isCheckingOut ? "Connecting to Stripe..." : `Checkout — $${subtotal.toFixed(2)}`}
                   </button>
                 </div>
                 <div className="mt-4 flex justify-center text-center text-xs text-coffee-black/50 font-bold uppercase tracking-wider">

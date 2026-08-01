@@ -17,21 +17,21 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-warm-paper/50 border-b-4 border-coffee-black relative">
-      <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-warm-paper/50 border-b-4 border-coffee-black relative">
+      <div className="mx-auto max-w-2xl px-6 sm:px-10 lg:px-16">
         
         {/* Card Container */}
-        <div className="bg-light-cream/30 rounded-2xl border-4 border-coffee-black p-6 sm:p-8 retro-shadow-lg">
+        <div className="bg-light-cream/30 rounded-2xl border-4 border-coffee-black p-8 sm:p-12 retro-shadow-lg">
           
           {/* Header */}
-          <div className="text-center mb-8">
-            <span className="text-xs font-black uppercase tracking-widest text-retro-red">
-              Diner Mailbox
+          <div className="text-center mb-10">
+            <span className="text-sm font-black uppercase tracking-widest text-retro-red">
+              Joe's Mailbox
             </span>
-            <h2 className="font-display text-3xl font-black uppercase text-coffee-black mt-1">
+            <h2 className="font-display text-4xl font-black uppercase text-coffee-black mt-2">
               Speak to Joe
             </h2>
-            <p className="text-xs font-bold text-coffee-black/60 uppercase tracking-wider mt-1">
+            <p className="text-sm font-bold text-coffee-black/60 uppercase tracking-wider mt-2">
               Consult with Joe when the day gets strange.
             </p>
           </div>
@@ -41,15 +41,15 @@ export default function ContactForm() {
               <div className="h-16 w-16 text-retro-yellow mx-auto mb-4 animate-bounce">
                 📮
               </div>
-              <h3 className="font-display text-xl font-black text-coffee-black uppercase">
+              <h3 className="font-display text-2xl font-black text-coffee-black uppercase">
                 Message Dropped!
               </h3>
-              <p className="text-sm text-coffee-black/80 mt-2">
+              <p className="text-base text-coffee-black/80 mt-3">
                 We've received your mail. We read everything. We'll get back to you during our next coffee break.
               </p>
               <button
                 onClick={() => setIsSubmitted(false)}
-                className="mt-6 inline-flex items-center justify-center rounded-lg bg-coffee-black px-6 py-2 text-xs font-bold uppercase tracking-wider text-light-cream hover:bg-retro-red hover:text-light-cream transition-colors duration-200 cursor-pointer border-2 border-coffee-black"
+                className="mt-6 inline-flex items-center justify-center rounded-lg bg-coffee-black px-6 py-3 text-sm font-bold uppercase tracking-wider text-light-cream hover:bg-retro-red hover:text-light-cream transition-colors duration-200 cursor-pointer border-2 border-coffee-black"
               >
                 Send Another
               </button>
@@ -60,7 +60,7 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs font-black uppercase tracking-wider text-coffee-black mb-1.5"
+                  className="block text-sm font-black uppercase tracking-wider text-coffee-black mb-2"
                 >
                   First & Last Name
                 </label>
@@ -72,7 +72,7 @@ export default function ContactForm() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="e.g. Daniel Miller"
-                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-3 text-sm font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black"
+                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-4 text-base font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black"
                 />
               </div>
 
@@ -80,7 +80,7 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-black uppercase tracking-wider text-coffee-black mb-1.5"
+                  className="block text-sm font-black uppercase tracking-wider text-coffee-black mb-2"
                 >
                   Email Address
                 </label>
@@ -92,7 +92,7 @@ export default function ContactForm() {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="e.g. daniel@domain.com"
-                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-3 text-sm font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black"
+                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-4 text-base font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black"
                 />
               </div>
 
@@ -100,7 +100,7 @@ export default function ContactForm() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-xs font-black uppercase tracking-wider text-coffee-black mb-1.5"
+                  className="block text-sm font-black uppercase tracking-wider text-coffee-black mb-2"
                 >
                   What's on your mind?
                 </label>
@@ -112,14 +112,14 @@ export default function ContactForm() {
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell Joe how your day's going, or ask about our beans."
-                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-3 text-sm font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black resize-none"
+                  className="w-full rounded-lg border-2 border-coffee-black bg-warm-paper px-4 py-4 text-base font-bold text-coffee-black placeholder-coffee-black/40 focus:outline-none focus:ring-2 focus:ring-retro-yellow focus:border-coffee-black resize-none"
                 />
               </div>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="w-full flex items-center justify-center rounded-xl bg-retro-red px-6 py-3.5 text-sm font-bold uppercase tracking-wider text-light-cream shadow-md hover:bg-retro-yellow hover:text-coffee-black retro-border retro-shadow transition-all duration-200 cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)]"
+                className="w-full flex items-center justify-center rounded-xl bg-retro-red px-6 py-4 text-base font-bold uppercase tracking-wider text-light-cream shadow-md hover:bg-retro-yellow hover:text-coffee-black retro-border retro-shadow transition-all duration-200 cursor-pointer active:translate-y-0.5 active:shadow-[1px_1px_0px_0px_var(--color-coffee-black)]"
               >
                 Send Message
               </button>
@@ -127,8 +127,8 @@ export default function ContactForm() {
           )}
 
           {/* Form Footnote */}
-          <div className="mt-6 pt-4 border-t border-coffee-black/10 text-center">
-            <p className="text-[10px] text-coffee-black/50 leading-relaxed font-bold uppercase">
+          <div className="mt-8 pt-6 border-t border-coffee-black/10 text-center">
+            <p className="text-xs text-coffee-black/50 leading-relaxed font-bold uppercase">
               "Consulting with Joe? Take a sip, look thoughtful, tell the boss you're analyzing."
             </p>
           </div>
